@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sentence Modification Guide — Volume One (Landing)
 
-## Getting Started
+A simple, calm, reassuring static landing page + checkout for the Inside Line workbook.
 
-First, run the development server:
+## Philosophy
+This site exists to help people exhale.  
+The tone is reassurance, not marketing.  
+The audience is usually carrying this for someone they love.
+
+## Run the site
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env
+# Add your Stripe test secret key to .env
+
+npm install
+npm run server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:4242
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Stripe Test Card
+- Card: `4242 4242 4242 4242`
+- Any future date + any CVC
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+After successful payment you will be sent to `/pages/thank-you.html?session_id=...`
 
-## Learn More
+Click the download button — the server verifies the session and serves the PDF.
 
-To learn more about Next.js, take a look at the following resources:
+## Adding the actual PDF
+Place your file here:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+downloads/sentence-modification-vol1.pdf
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The download route will serve it only to people who paid.
 
-## Deploy on Vercel
+## Git Worktree (optional)
+If you want to develop this as a worktree from the main `inside-line` repo:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+cd inside-line
+git worktree add ../insideline.org main   # or a feature branch
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+- Price is currently hardcoded at $29 in server.js
+- This is intentionally a very small project (just HTML + CSS + one Express server)
+- For real emails later, see the templates in the main inside-line project

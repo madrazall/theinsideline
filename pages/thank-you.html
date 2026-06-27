@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you — Inside Line</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { background: #f8f7f4; }
+    .thankyou { max-width: 620px; margin: 80px auto; padding: 0 24px; text-align: center; }
+    .thankyou h1 { font-size: 32px; margin-bottom: 16px; }
+    .download-btn {
+      display: inline-block;
+      margin-top: 24px;
+      background: #2c2c2c;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .note { color: #555; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div class="thankyou">
+    <h1>You're in.</h1>
+    
+    <p id="main-msg" style="font-size: 17px; max-width: 48ch; margin: 0 auto 20px;">
+      Thank you. Your payment was successful.
+    </p>
+
+    <p id="sub-msg" class="note">
+      We've also sent the details to the email associated with your purchase.
+    </p>
+
+    <a id="download-link" href="#" class="download-btn" style="display:none">Download your PDF now</a>
+
+    <p id="ship-note" class="note" style="display:none; margin-top: 16px;">
+      Your print copy will be shipped shortly. You should receive tracking info by email.
+    </p>
+
+    <p style="margin-top: 40px; font-size: 14px; color: #666;">
+      Keep this link private. It is tied to your order.
+    </p>
+  </div>
+
+  <script>
+    (async function () {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+      const link = document.getElementById('download-link');
+      const shipNote = document.getElementById('ship-note');
+      const mainMsg = document.getElementById('main-msg');
+      const subMsg = document.getElementById('sub-msg');
+
+      if (!sessionId) {
+        mainMsg.textContent = 'Thank you for your order.';
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/session?id=${encodeURIComponent(sessionId)}`);
+        const info = await res.json();
+        const meta = info.metadata || {};
+        const isDownload = meta.fulfillment === 'download' || meta.fulfillment === 'both';
+
+        if (isDownload) {
+          link.style.display = 'inline-block';
+          link.href = `/download?session_id=${encodeURIComponent(sessionId)}`;
+        }
+
+        if (meta.fulfillment === 'mail' || meta.fulfillment === 'both') {
+          shipNote.style.display = 'block';
+        }
+
+        if (meta.variant === 'paper') {
+          mainMsg.textContent = 'Thank you. Your print copy is being prepared.';
+        } else if (meta.variant === 'both') {
+          mainMsg.textContent = 'Thank you. Your digital access is ready and the print copy will ship soon.';
+        } else {
+          mainMsg.textContent = 'Thank you. Your digital guide is ready for download.';
+        }
+
+      } catch (e) {
+        // fallback
+        link.style.display = 'inline-block';
+        link.href = `/download?session_id=${encodeURIComponent(sessionId)}`;
+      }
+    })();
+  </script>
+</body>
+</html>

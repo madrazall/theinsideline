@@ -44,7 +44,30 @@ cd inside-line
 git worktree add ../insideline.org main   # or a feature branch
 ```
 
+## Pricing
+Three options supported:
+- Digital (PDF): $29 — instant download
+- Print: $59 — ships physical copy
+- Both: $69 — digital + print
+
+## Git Worktree
+This folder is set up as a worktree:
+```bash
+# From inside-line repo
+git worktree list
+# You are on branch landing/sentence-mod-vol1 in this dir
+```
+
+To recreate if needed:
+```bash
+cd inside-line
+git worktree add ../insideline.org -b landing/sentence-mod-vol1
+# (then restore files + commit as done)
+```
+
 ## Notes
-- Price is currently hardcoded at $29 in server.js
 - This is intentionally a very small project (just HTML + CSS + one Express server)
-- For real emails later, see the templates in the main inside-line project
+- For real transactional emails (beyond Stripe receipts), the main inside-line project uses Resend. We can add it here if needed — open to suggestions.
+- Images are served from `assets/` (front.png for cover, etc.)
+- Add the real PDF to `downloads/sentence-modification-vol1.pdf` for the download flow to work.
+- Set `STRIPE_SECRET_KEY` in `.env` (test keys work with card 4242 4242 4242 4242)

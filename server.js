@@ -11,15 +11,23 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 4242;
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-11-20.acacia',
-});
+let stripe = null;
+if (process.env.STRIPE_SECRET_KEY) {
+  stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2024-11-20.acacia',
+  });
+} else {
+  console.warn('⚠️  No STRIPE_SECRET_KEY found in env. Payment endpoints will return errors until configured.');
+}
 
 app.use(express.json());
 app.use(express.static(__dirname)); // Serve index.html, styles.css, script.js, pages/, assets/
 
 // Create Stripe Checkout Session - supports digi $29 / paper $59 / both $69
 app.post('/create-checkout-session', async (req, res) => {
+  if (!stripe) {
+    return res.status(500).json({ error: 'Stripe not configured. Set STRIPE_SECRET_KEY in .env' });
+  }
   try {
     const origin = req.headers.origin || `http://localhost:${PORT}`;
     const variant = (req.body && req.body.variant) || 'digi';
@@ -80,6 +88,7 @@ app.post('/create-checkout-session', async (req, res) => {
 app.get('/api/session', async (req, res) => {
   const id = req.query.id;
   if (!id) return res.status(400).json({ error: 'Missing id' });
+  if (!stripe) return res.status(500).json({ error: 'Stripe not configured' });
   try {
     const s = await stripe.checkout.sessions.retrieve(id);
     res.json({
@@ -98,6 +107,9 @@ app.get('/download', async (req, res) => {
 
   if (!sessionId) {
     return res.status(400).send('Missing session_id');
+  }
+  if (!stripe) {
+    return res.status(500).send('Stripe not configured on server');
   }
 
   try {
@@ -132,5 +144,5 @@ app.get('/download', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 Inside Line landing server running on http://localhost:${PORT}`);
-  console.log('   Open the site, click "Get Volume One", then use test card 4242 4242 4242 4242');
+  console.log('   Use a test key in .env for full Stripe flow. Test card: 4242 4242 4242 4242');
 });

@@ -1,0 +1,29 @@
+<url>
+  <loc>https://theinsideline.org/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://theinsideline.org/pages/about</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://theinsideline.org/pages/faq</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://theinsideline.org/pages/privacy</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://theinsideline.org/pages/thank-you</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
+</url>

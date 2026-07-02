@@ -477,6 +477,152 @@ h1 {
 
 .footer a { color: #8fa2af; }
 
+/* Home page (brand-level) — deliberately different shape from product pages:
+   no angled book mockup, text-first hero, shelf of small cover thumbnails. */
+.home-hero {
+  text-align: center;
+  padding: 90px 0 46px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.home-hero .kicker {
+  color: #50c1db;
+  letter-spacing: .22em;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.home-hero h1 {
+  font-size: clamp(38px, 5.5vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 880px;
+  margin: 0 auto 20px;
+}
+
+.home-hero .tagline {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.volume-chips {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.volume-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 20px;
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: #cfe3ec;
+  text-decoration: none;
+}
+
+.volume-chip:hover { border-color: var(--teal); color: var(--teal); }
+
+.library {
+  margin-top: 24px;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.library h2 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.lib-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.lib-cover {
+  width: 92px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0,0,0,.45);
+}
+
+.lib-cover img { display: block; width: 100%; height: auto; }
+
+.lib-card h3 { margin: 0 0 6px; font-size: 18px; }
+.lib-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.lib-card .more-link { margin-top: 0; font-size: 14px; }
+
+@media (max-width: 480px) {
+  .lib-card { flex-direction: column; }
+  .lib-cover { width: 120px; }
+}
+
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: var(--panel);
+  padding: 16px 0;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 48px;
+  animation: ticker-scroll 32s linear infinite;
+}
+
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #8fd9ec;
+}
+
+.ticker-track span::after {
+  content: '\25C6';
+  color: var(--teal);
+  font-size: 10px;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
 @media (max-width: 720px) {
   .about, .faq, .toc-preview, .page-content { padding: 24px 20px; }
   .buy-grid { grid-template-columns: 1fr; }

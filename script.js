@@ -1,18 +1,20 @@
-// Simple checkout handler for the landing page
-async function startCheckout(variant = 'digi') {
+// Simple checkout handler — only used if a page wires up the dynamic
+// /create-checkout-session flow (server.js). Most pages use static
+// Stripe Payment Link URLs directly and don't need this file.
+async function startCheckout(variant = 'digi', product = 'vol1') {
   const btns = document.querySelectorAll('.checkout-btn');
-  btns.forEach(b => { 
-    b.disabled = true; 
+  btns.forEach(b => {
+    b.disabled = true;
     const orig = b.textContent;
     b.dataset.origText = orig;
-    b.textContent = 'Connecting to Stripe…'; 
+    b.textContent = 'Connecting to Stripe…';
   });
 
   try {
     const res = await fetch('/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ variant }),
+      body: JSON.stringify({ variant, product }),
     });
 
     if (!res.ok) throw new Error('Server error');
@@ -43,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-variant]').forEach(btn => {
     btn.addEventListener('click', () => {
       const v = btn.getAttribute('data-variant');
-      startCheckout(v);
+      const p = btn.getAttribute('data-product') || 'vol1';
+      startCheckout(v, p);
     });
   });
 });

@@ -21,9 +21,29 @@ if (process.env.STRIPE_SECRET_KEY) {
 }
 
 app.use(express.json());
-app.use(express.static(__dirname)); // Serve index.html, styles.css, script.js, pages/, assets/
+app.use(express.static(__dirname)); // Serve index.html, styles.css, script.js, shop/, blog/, about/, assets/
 
-// Create Stripe Checkout Session - supports digi $29 / paper $59 / both $69
+// Product catalog — add a new entry here for each future volume/product.
+const PRODUCTS = {
+  vol1: {
+    slug: 'sentence-mod-vol1',
+    name: 'Inside Line: Volume One — Sentence Modification',
+    desc: '69-page workbook with templates, worksheets, forms, and strategy',
+    pdfFile: 'sentence-modification-vol1.pdf',
+    downloadName: 'Inside-Line-Volume-One-Sentence-Modification.pdf',
+    prices: { digi: 2900, paper: 5900, both: 6900 },
+  },
+  vol2: {
+    slug: 'sentence-mod-vol2',
+    name: 'Inside Line: Volume Two — Habeas Corpus',
+    desc: 'Step-by-step workbook with templates, worksheets, forms, and strategy',
+    pdfFile: 'habeas-corpus-vol2.pdf',
+    downloadName: 'Inside-Line-Volume-Two-Habeas-Corpus.pdf',
+    prices: { digi: 2900, paper: 5900, both: 6900 },
+  },
+};
+
+// Create Stripe Checkout Session - supports digi / paper / both per product
 app.post('/create-checkout-session', async (req, res) => {
   if (!stripe) {
     return res.status(500).json({ error: 'Stripe not configured. Set STRIPE_SECRET_KEY in .env' });
@@ -31,26 +51,20 @@ app.post('/create-checkout-session', async (req, res) => {
   try {
     const origin = req.headers.origin || `http://localhost:${PORT}`;
     const variant = (req.body && req.body.variant) || 'digi';
+    const productKey = (req.body && req.body.product) || 'vol1';
+    const product = PRODUCTS[productKey];
 
-    let priceAmount, productName, productDesc, fulfillment;
-
-    if (variant === 'paper') {
-      priceAmount = 5900;
-      productName = 'Sentence Modification Guide — Print Edition';
-      productDesc = 'Physical workbook shipped to you';
-      fulfillment = 'mail';
-    } else if (variant === 'both') {
-      priceAmount = 6900;
-      productName = 'Sentence Modification Guide — Digital + Print Bundle';
-      productDesc = 'Immediate PDF access + printed copy shipped';
-      fulfillment = 'both';
-    } else {
-      // digi
-      priceAmount = 2900;
-      productName = 'Sentence Modification Guide — Digital (PDF)';
-      productDesc = '69-page workbook with templates, worksheets, forms, and strategy — instant PDF';
-      fulfillment = 'download';
+    if (!product) {
+      return res.status(400).json({ error: `Unknown product "${productKey}"` });
     }
+
+    const priceAmount = product.prices[variant];
+    if (!priceAmount) {
+      return res.status(400).json({ error: `Unknown variant "${variant}"` });
+    }
+
+    const fulfillment = variant === 'paper' ? 'mail' : variant === 'both' ? 'both' : 'download';
+    const editionLabel = variant === 'paper' ? 'Print Edition' : variant === 'both' ? 'Digital + Print Bundle' : 'Digital (PDF)';
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -59,8 +73,8 @@ app.post('/create-checkout-session', async (req, res) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: productName,
-              description: productDesc,
+              name: `${product.name} — ${editionLabel}`,
+              description: product.desc,
             },
             unit_amount: priceAmount,
           },
@@ -70,7 +84,7 @@ app.post('/create-checkout-session', async (req, res) => {
       mode: 'payment',
       metadata: {
         fulfillment,
-        productSlug: 'sentence-mod-vol1',
+        productSlug: product.slug,
         variant,
       },
       success_url: `${origin}/pages/thank-you.html?session_id={CHECKOUT_SESSION_ID}`,
@@ -119,23 +133,24 @@ app.get('/download', async (req, res) => {
       return res.status(403).send('Payment not completed for this session.');
     }
 
-    // The product we care about — allow digi or both
+    // Find the product this session paid for
     const meta = session.metadata || {};
-    const allowed = (meta.fulfillment === 'download' || meta.fulfillment === 'both') && meta.productSlug === 'sentence-mod-vol1';
+    const product = Object.values(PRODUCTS).find((p) => p.slug === meta.productSlug);
+    const allowed = (meta.fulfillment === 'download' || meta.fulfillment === 'both') && product;
     if (!allowed) {
       return res.status(403).send('This session is not authorized for the requested file.');
     }
 
     // Look for the PDF in downloads/
-    const pdfPath = path.join(__dirname, 'downloads', 'sentence-modification-vol1.pdf');
+    const pdfPath = path.join(__dirname, 'downloads', product.pdfFile);
 
     if (!fs.existsSync(pdfPath)) {
       return res.status(404).send(
-        'The PDF is not available yet. Please place your file at downloads/sentence-modification-vol1.pdf'
+        `The PDF is not available yet. Please place your file at downloads/${product.pdfFile}`
       );
     }
 
-    res.download(pdfPath, 'Sentence-Modification-Guide-Volume-One.pdf');
+    res.download(pdfPath, product.downloadName);
   } catch (err) {
     console.error(err);
     res.status(500).send('Could not verify your purchase or serve the file.');

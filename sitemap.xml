@@ -8,25 +8,49 @@
   </url>
 
   <url>
-    <loc>https://theinsideline.org/pages/about</loc>
+    <loc>https://theinsideline.org/shop/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://theinsideline.org/shop/sentence-mod-vol-1/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://theinsideline.org/shop/sentence-mod-vol-2/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://theinsideline.org/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://theinsideline.org/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://theinsideline.org/pages/faq</loc>
+    <loc>https://theinsideline.org/faq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://theinsideline.org/pages/privacy</loc>
+    <loc>https://theinsideline.org/legal/privacy/</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://theinsideline.org/pages/thank-you</loc>
+    <loc>https://theinsideline.org/legal/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

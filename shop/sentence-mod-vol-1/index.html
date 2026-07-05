@@ -1,223 +1,332 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NGQC4FGW3Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  gtag('config', 'G-NGQC4FGW3Y');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xe9kjjmb9z");
-</script>
-<!-- Basic SEO -->
-<meta name="description" content="Practical guidance for incarcerated individuals seeking sentence modification in Connecticut. Clear explanations, forms, and step-by-step resources.">
+<title>Inside Line | The Conclave</title>
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://theinsideline.org/shop/sentence-mod-vol-1/">
-<meta property="og:title" content="Inside Line: Volume One — Sentence Modification">
-<meta property="og:description" content="Practical guidance for incarcerated individuals seeking sentence modification in Connecticut.">
-<meta property="og:image" content="https://theinsideline.org/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Twitter/X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Inside Line: Volume One — Sentence Modification">
-<meta name="twitter:description" content="Practical guidance for incarcerated individuals seeking sentence modification in Connecticut.">
-<meta name="twitter:image" content="https://theinsideline.org/og-image.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Volume One: Sentence Modification — Inside Line</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/theme.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#111;
+    color:white;
+    font-family:Inter,sans-serif;
+
+}
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+
+}
+
+.hero{
+
+    display:grid;
+    grid-template-columns:450px 1fr;
+    gap:60px;
+    align-items:center;
+
+}
+
+.cover{
+
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+}
+
+h1{
+
+    font-family:"Bebas Neue";
+    font-size:90px;
+    letter-spacing:2px;
+    line-height:.9;
+
+}
+
+.subtitle{
+
+    color:#58D7F7;
+    font-size:28px;
+    margin-top:12px;
+
+}
+
+.tagline{
+
+    color:#ccc;
+    margin:30px 0;
+    font-size:20px;
+    line-height:1.7;
+
+}
+
+.cards{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#1b1b1b;
+
+    border:1px solid #2b2b2b;
+
+    border-radius:15px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#58D7F7;
+
+}
+
+.card h2{
+
+    font-family:"Bebas Neue";
+
+    font-size:46px;
+
+    letter-spacing:1px;
+
+}
+
+.price{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin:15px 0;
+
+    color:#58D7F7;
+
+}
+
+.card p{
+
+    color:#bbb;
+
+    line-height:1.7;
+
+    min-height:130px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:15px 28px;
+
+background:#58D7F7;
+
+color:#111;
+
+font-weight:700;
+
+text-decoration:none;
+
+border-radius:8px;
+
+transition:.25s;
+
+}
+
+.btn:hover{
+
+background:white;
+
+}
+
+footer{
+
+text-align:center;
+
+padding:80px 20px;
+
+color:#666;
+
+font-size:14px;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+h1{
+
+font-size:70px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="bar"></div>
-        <span class="inside">INSIDE</span>
-        <span class="line">LINE</span>
-      </div>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/shop/">Shop</a>
-        <a href="/blog/">Blog</a>
-        <a href="/about/">About</a>
-        <a href="/faq/">FAQ</a>
-        <a class="btn primary" href="#buy">Get Volume One</a>
-      </nav>
-    </header>
 
-    <section class="hero" id="overview">
-      <div>
-        <div class="eyebrow">LEGAL NAVIGATION GUIDE &middot; VOLUME ONE</div>
-        <h1>SENTENCE<br>MODIFICATION</h1>
-        <p class="sub">Action-oriented legal navigation for incarcerated people and the people helping them.</p>
-        <p class="body">A practical, step-by-step system for understanding the process, organizing records, and moving forward with clarity. Designed to be simple, direct, and useful in real situations.</p>
-        <div class="checks">
-          <div>It won't promise an outcome.</div>
-          <div>It will give you a roadmap.</div>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="#buy">Get Volume One</a>
-          <a class="btn secondary" href="#inside">See What's Inside</a>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <div class="ico" aria-hidden="true">&#9635;</div>
-            <div><div class="num">69</div><div class="label">PAGES</div></div>
-          </div>
-          <div class="stat">
-            <div class="ico" aria-hidden="true">&#9638;</div>
-            <div><div class="num">10+</div><div class="label">TEMPLATES</div></div>
-          </div>
-          <div class="stat">
-            <div class="ico" aria-hidden="true">&#9636;</div>
-            <div><div class="num">PDF + PRINT</div><div class="label">EDITIONS</div></div>
-          </div>
-        </div>
-      </div>
+<div class="container">
 
-      <div class="mockup" aria-label="Inside Line book cover and a preview of three interior pages">
-        <div class="book sheet three preview">
-          <img src="/assets/Screenshot 2026-06-27 180811.png" alt="Preview of an interior page: How to Use This Guide" loading="lazy">
-        </div>
-        <div class="book sheet two preview">
-          <img src="/assets/Screenshot 2026-06-27 180830.png" alt="Preview of an interior page: Understanding Sentence Modification" loading="lazy">
-        </div>
-        <div class="book sheet one preview">
-          <img src="/assets/Screenshot 2026-06-27 180907.png" alt="Preview of an interior page: The Self-Advocacy Starter Pack" loading="lazy">
-        </div>
-        <div class="book main">
-          <img src="/assets/vol1-cover.png" alt="Inside Line: Volume One &mdash; Sentence Modification, book cover" loading="lazy">
-          <div class="glow"></div>
-        </div>
-        <div class="book back">
-          <img src="/assets/back.png" alt="Inside Line: Volume One &mdash; Sentence Modification, back cover" loading="lazy">
-        </div>
-      </div>
-    </section>
+<section class="hero">
 
-    <section class="grid" id="inside">
-      <div class="cell">
-        <div class="iconline" aria-hidden="true">&#9647;</div>
-        <h3>Step-by-Step Guidance</h3>
-        <p>Clear instructions from start to finish so you always know what comes next.</p>
-      </div>
-      <div class="cell">
-        <div class="iconline" aria-hidden="true">&#9636;</div>
-        <h3>Templates & Examples</h3>
-        <p>Ready-to-use letters, statements, and forms that save time.</p>
-      </div>
-      <div class="cell">
-        <div class="iconline" aria-hidden="true">&#9998;</div>
-        <h3>Worksheets & Trackers</h3>
-        <p>Organize your information and track your progress with printable tools.</p>
-      </div>
-      <div class="cell">
-        <div class="iconline" aria-hidden="true">&#9637;</div>
-        <h3>Official Forms & Resources</h3>
-        <p>The documents and references you need, plus contact information.</p>
-      </div>
-      <div class="cell">
-        <div class="iconline" aria-hidden="true">&#9960;</div>
-        <h3>Strategy & Common Mistakes</h3>
-        <p>Learn what matters most and what to avoid.</p>
-      </div>
-    </section>
+<img src="/assets/vol1-cover.png" class="cover">
 
-    <section class="toc-preview">
-      <div class="preview-grid">
-        <div class="preview-card">
-          <h2>See exactly what's inside</h2>
-          <img src="/assets/Screenshot 2026-06-27 180801.png" alt="Full table of contents for Inside Line: Volume One &mdash; Sentence Modification" loading="lazy">
-        </div>
-        <div class="preview-card">
-          <h2>Start with this quick eligibility check</h2>
-          <img src="/assets/eligibility.png" alt="Eligibility questionnaire worksheet from Inside Line: Volume One" loading="lazy">
-        </div>
-      </div>
-    </section>
+<div>
 
-    <section class="compare" id="compare">
-      <div class="box before">
-        <h4 style="color:var(--red)">BEFORE</h4>
-        <div class="bitem"><span class="x" aria-hidden="true">&#10005;</span><span>You don't know where to begin.</span></div>
-        <div class="bitem"><span class="x" aria-hidden="true">&#10005;</span><span>Information is scattered across agencies.</span></div>
-        <div class="bitem"><span class="x" aria-hidden="true">&#10005;</span><span>Every website says something different.</span></div>
-        <div class="bitem"><span class="x" aria-hidden="true">&#10005;</span><span>You're collecting paperwork without knowing what's important.</span></div>
-      </div>
-      <div class="arrow" aria-hidden="true">&#8594;</div>
-      <div class="box after">
-        <h4 style="color:var(--teal)">AFTER</h4>
-        <div class="aitem"><span class="y" aria-hidden="true">&#10003;</span><span>You have a roadmap.</span></div>
-        <div class="aitem"><span class="y" aria-hidden="true">&#10003;</span><span>You understand the process.</span></div>
-        <div class="aitem"><span class="y" aria-hidden="true">&#10003;</span><span>You know which records matter.</span></div>
-        <div class="aitem"><span class="y" aria-hidden="true">&#10003;</span><span>You know what to request next.</span></div>
-      </div>
-    </section>
+<h1>INSIDE LINE</h1>
 
-    <section class="faq" id="faq">
-      <h2>Frequently Asked Questions</h2>
+<div class="subtitle">Volume One: Sentence Modification</div>
 
-      <div class="qa">
-        <div class="q">Is this legal advice?</div>
-        <p class="a">No. This guide is not legal advice and does not replace an attorney. It is a practical workbook designed to help you understand the sentence modification process, organize your information, prepare your documents, and know what steps come next.</p>
-      </div>
+<p class="tagline">
 
-      <div class="qa">
-        <div class="q">Who is this guide for?</div>
-        <p class="a">This guide was written for incarcerated individuals preparing for sentence modification, family members helping someone they love, friends, advocates, and mentors, and anyone trying to understand the Connecticut sentence modification process. No legal background is required.</p>
-      </div>
+The guide you never knew you needed.  A practical, step-by-step system for understanding the process, organizing records, and moving forward with clarity & confidence. Designed to be simple, direct, and useful in real situations.
 
-      <div class="qa">
-        <div class="q">Will this guarantee my sentence is modified?</div>
-        <p class="a">No. No honest person can promise that. What this guide does promise is preparation. It helps you understand the process, gather the right information, avoid common mistakes, and present the strongest, most organized application possible.</p>
-      </div>
+</p>
 
-      <a class="more-link" href="/faq/">View all FAQs &rarr;</a>
-    </section>
+</div>
 
-    <section class="about" id="about">
-      <h2>About the Author</h2>
-      <p>I don't enjoy being the center of attention. I enjoy solving problems. This guide wasn't written because I wanted to become an author — it was written because someone I care about was navigating a system that seemed designed to make simple answers difficult to find.</p>
-      <p>So I organized it into the resource I wish we'd had from the beginning.</p>
-      <a class="more-link" href="/about/">Read the full story &rarr;</a>
-    </section>
+</section>
 
-    <section class="buy" id="buy">
-      <h2>Get Volume One</h2>
-      <div class="buy-grid">
-        <div class="buy-card">
-          <h3>Digital Edition (PDF)</h3>
-          <p>Instant download after purchase, plus a confirmation email so you can start using the workbook right away.</p>
-          <a class="btn primary" href="https://buy.stripe.com/00w14m3ZHcxt2nEbit4ko09" target="_blank" rel="noopener">Buy Digital &mdash; Get Instant Access</a>
-        </div>
-        <div class="buy-card">
-          <h3>Print Edition</h3>
-          <p>A physical copy of the complete 69-page workbook, shipped to you or to someone you're supporting.</p>
-          <a class="btn primary" href="https://buy.stripe.com/6oU7sKdAh0OL3rI9al4ko08" target="_blank" rel="noopener">Buy Print Edition</a>
-        </div>
-      </div>
-    </section>
+<section class="cards">
 
-    <section class="about" style="margin-top:24px;">
-      <h2>Continue the Series</h2>
-      <p>Volume Two covers habeas corpus &mdash; another practical, step-by-step guide in the same format.</p>
-      <a class="more-link" href="/shop/sentence-mod-vol-2/">See Volume Two &rarr;</a>
-    </section>
+<div class="card">
 
-    <div class="footer">Inside Line: Volume One &mdash; Sentence Modification. <a href="/shop/">All guides</a></div>
-  </div>
+<h2>Digital</h2>
+
+<div class="price">$14.99</div>
+
+<p>
+
+✔ Instant PDF download
+
+<br><br>
+
+✔ Read on any device
+
+<br><br>
+
+✔ Lifetime personal access
+
+</p>
+
+<a href="YOUR_DIGITAL_STRIPE_LINK" class="btn">
+
+Buy Digital
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>Print</h2>
+
+<div class="price">$24.99</div>
+
+<p>
+
+✔ Professionally printed paperback
+
+<br><br>
+
+✔ Perfect for recording & notes
+
+<br><br>
+
+✔ Delivered to your door
+
+</p>
+
+<a href="https://buy.stripe.com/28E7sK2VD0OL6DU1HT4ko0a" class="btn">
+
+Buy Print
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>Bundle</h2>
+
+<div class="price">$34.99</div>
+
+<p>
+
+✔ Instant PDF
+
+<br><br>
+
+✔ Printed Paperback
+
+<br><br>
+
+✔ Save $5 when you purchase both
+
+</p>
+
+<a href="YOUR_BUNDLE_STRIPE_LINK" class="btn">
+
+Buy Bundle
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Inside Line • Knowledge. Rights. Action.
+
+</footer>
+
+</div>
+
 </body>
 </html>

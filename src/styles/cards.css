@@ -1,63 +1,231 @@
-export const legalGuides = [
+.guide-section{
 
-{
-    volume:1,
-    title:"Sentence Modification",
-    status:"Available",
-    link:"/guides/sentence-modification"
-},
+    width:min(1400px,92%);
 
-{
-    volume:2,
-    title:"Habeas Corpus",
-    status:"Available",
-    link:"/guides/habeas-corpus"
-},
+    margin:0 auto 100px;
 
-{
-    volume:3,
-    title:"Long Distance Parenting",
-    status:"Coming Soon",
-    link:"#"
-},
-
-{
-    volume:4,
-    title:"Reentry",
-    status:"Coming Soon",
-    link:"#"
 }
 
-];
+.section-title{
 
-export const offTheRecord = [
+    display:flex;
 
-{
-    title:"Growth & Reflection",
-    status:"Available",
-    link:"/guides/growth-reflection"
-},
+    align-items:center;
 
-{
-    title:"Lifestyle",
-    status:"Coming Soon",
-    link:"#"
+    gap:25px;
+
+    margin-bottom:45px;
+
 }
 
-];
+.section-title h2{
 
-export const activityBooks = [
+    font-family:"Bebas Neue",sans-serif;
 
-{
-    title:"Activity Book 1",
-    status:"Available",
-    link:"/guides/activity-book-1"
-},
+    font-size:3rem;
 
-{
-    title:"Activity Book 2",
-    status:"Coming Soon",
-    link:"#"
+    font-weight:400;
+
+    letter-spacing:.05em;
+
+    color:#fff;
+
+    white-space:nowrap;
+
 }
 
-];
+.title-line{
+
+    height:1px;
+
+    width:100%;
+
+    background:#2c3138;
+
+}
+
+.guide-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+.guide-card{
+
+    background:#191d22;
+
+    border:1px solid #2b3138;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    transition:.25s;
+
+}
+
+.guide-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#62F2FF;
+
+    box-shadow:0 0 35px rgba(98,242,255,.15);
+
+}
+
+.guide-cover{
+
+    background:#22272e;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    min-height:420px;
+
+}
+
+.guide-cover img{
+
+    width:100%;
+
+    max-width:230px;
+
+    transition:.25s;
+
+}
+
+.guide-card:hover .guide-cover img{
+
+    transform:scale(1.03);
+
+}
+
+.coming-cover{
+
+    width:230px;
+
+    height:320px;
+
+    border:2px dashed #3b424b;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#7d8792;
+
+    font-weight:600;
+
+    border-radius:8px;
+
+}
+
+.guide-body{
+
+    padding:24px;
+
+}
+
+.volume{
+
+    color:#62F2FF;
+
+    text-transform:uppercase;
+
+    letter-spacing:.15em;
+
+    font-size:.8rem;
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+.guide-body h3{
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:2rem;
+
+    font-weight:400;
+
+    margin-bottom:12px;
+
+}
+
+.guide-body p{
+
+    color:#b7c0c8;
+
+    margin-bottom:24px;
+
+}
+
+.guide-body button{
+
+    width:100%;
+
+    border:none;
+
+    background:#62F2FF;
+
+    color:#111;
+
+    font-weight:700;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    transition:.25s;
+
+}
+
+.guide-body button:hover:not(:disabled){
+
+    background:#7af4ff;
+
+}
+
+.guide-body button:disabled{
+
+    background:#343b43;
+
+    color:#8e98a2;
+
+    cursor:not-allowed;
+
+}
+
+@media(max-width:900px){
+
+.guide-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.guide-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}

@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111417;
+    color:#fff;
+    font-family:"Urbanist",sans-serif;
+}
+
+.banner{
+
+    height:320px;
+
+    background-size:cover;
+
+    background-position:center right;
+
+    position:relative;
+
+}
+
+.banner::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(10,12,15,.18),
+        rgba(10,12,15,.35)
+    );
+
+}
+
+.nav{
+
+    height:74px;
+
+    background:#14181d;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 70px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+    font-family:"Bebas Neue";
+
+    font-size:2.75rem;
+
+    color:#62F2FF;
+
+    letter-spacing:.05em;
+
+}
+
+.links{
+
+    display:flex;
+
+    gap:42px;
+
+}
+
+.links a{
+
+    color:#d8dde2;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.25s;
+
+}
+
+.links a:hover{
+
+    color:#62F2FF;
+
+}
+
+.hero{
+
+    width:min(1350px,92%);
+
+    margin:70px auto;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.left h1{
+
+    font-family:"Bebas Neue";
+
+    font-size:8rem;
+
+    line-height:.9;
+
+    margin-bottom:30px;
+
+}
+
+.left p{
+
+    max-width:620px;
+
+    font-size:1.2rem;
+
+    color:#cfd5da;
+
+    line-height:1.9;
+
+}
+
+.left h3{
+
+    margin-top:40px;
+
+    color:#62F2FF;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:35px;
+
+    margin-top:45px;
+
+}
+
+.buttons button{
+
+    background:none;
+
+    border:none;
+
+    color:#6EF2FF;
+
+    font-family:"Brush Script MT",cursive;
+
+    font-size:2.2rem;
+
+    cursor:pointer;
+
+    text-shadow:
+        0 0 6px #6EF2FF,
+        0 0 12px #6EF2FF,
+        0 0 22px rgba(110,242,255,.8);
+
+    transition:.25s;
+
+}
+
+.buttons button:hover{
+
+    transform:scale(1.05);
+
+}
+
+.right{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.right img{
+
+    width:340px;
+
+    filter:drop-shadow(0 25px 40px rgba(0,0,0,.45));
+
+}

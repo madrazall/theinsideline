@@ -1,73 +1,16 @@
-# Sentence Modification Guide — Volume One (Landing)
+# React + Vite
 
-A simple, calm, reassuring static landing page + checkout for the Inside Line workbook.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Philosophy
-This site exists to help people exhale.  
-The tone is reassurance, not marketing.  
-The audience is usually carrying this for someone they love.
+Currently, two official plugins are available:
 
-## Run the site
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-```bash
-cp .env.example .env
-# Add your Stripe test secret key to .env
+## React Compiler
 
-npm install
-npm run server
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Open http://localhost:4242
+## Expanding the ESLint configuration
 
-## Stripe Test Card
-- Card: `4242 4242 4242 4242`
-- Any future date + any CVC
-
-After successful payment you will be sent to `/pages/thank-you.html?session_id=...`
-
-Click the download button — the server verifies the session and serves the PDF.
-
-## Adding the actual PDF
-Place your file here:
-
-```
-downloads/sentence-modification-vol1.pdf
-```
-
-The download route will serve it only to people who paid.
-
-## Git Worktree (optional)
-If you want to develop this as a worktree from the main `inside-line` repo:
-
-```bash
-cd inside-line
-git worktree add ../insideline.org main   # or a feature branch
-```
-
-## Pricing
-Three options supported:
-- Digital (PDF): $29 — instant download
-- Print: $59 — ships physical copy
-- Both: $69 — digital + print
-
-## Git Worktree
-This folder is set up as a worktree:
-```bash
-# From inside-line repo
-git worktree list
-# You are on branch landing/sentence-mod-vol1 in this dir
-```
-
-To recreate if needed:
-```bash
-cd inside-line
-git worktree add ../insideline.org -b landing/sentence-mod-vol1
-# (then restore files + commit as done)
-```
-
-## Notes
-- This is intentionally a very small project (just HTML + CSS + one Express server)
-- For real transactional emails (beyond Stripe receipts), the main inside-line project uses Resend. We can add it here if needed — open to suggestions.
-- Images are served from `assets/` (front.png for cover, etc.)
-- Add the real PDF to `downloads/sentence-modification-vol1.pdf` for the download flow to work.
-- Set `STRIPE_SECRET_KEY` in `.env` (test keys work with card 4242 4242 4242 4242)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

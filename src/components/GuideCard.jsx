@@ -30,27 +30,23 @@ export default function GuideCard({ guide }) {
           <img src={image} alt={guide.title} />
         ) : (
           <div className="coming-cover">
-            Coming Soon
+            <span>COMING SOON</span>
           </div>
         )}
 
       </div>
 
-      <div className="guide-body">
+      <div className="guide-info">
 
         {guide.volume && (
-          <span className="volume">
-            Volume {guide.volume}
-          </span>
+          <div className="guide-volume">
+            VOLUME {guide.volume}
+          </div>
         )}
 
         <h3>{guide.title}</h3>
 
-        <p>{guide.status}</p>
-
-        <button
-          disabled={guide.status === "Coming Soon"}
-        >
+        <button disabled={guide.status === "Coming Soon"}>
           {guide.status === "Coming Soon"
             ? "Coming Soon"
             : "View Guide"}

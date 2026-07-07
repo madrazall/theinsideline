@@ -4,7 +4,7 @@ import "./styles/home.css";
 import "./styles/cards.css";
 
 import hero from "./assets/images/hero.jpg";
-import volume1 from "./assets/images/volume1.png";
+import volume1 from "./assets/images/cover-v1.png";
 
 import GuideSection from "./components/GuideSection";
 

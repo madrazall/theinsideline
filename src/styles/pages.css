@@ -1,0 +1,148 @@
+.page-header {
+  padding: 60px 0 20px;
+}
+
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  max-width: 640px;
+  font-size: 1.1rem;
+}
+
+.mission-section {
+  width: var(--container);
+  margin: 0 auto 100px;
+  padding: 60px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.mission-section h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.mission-section p {
+  color: var(--text-secondary);
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.about-section {
+  width: var(--container);
+  margin: 0 auto 80px;
+}
+
+.about-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.about-section p {
+  color: var(--text-secondary);
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.resources-grid,
+.blog-grid {
+  width: var(--container);
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.resource-card,
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.resource-card:hover,
+.blog-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(99, 242, 255, 0.1);
+}
+
+.resource-card h3,
+.blog-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.resource-card p,
+.blog-card p {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.blog-search {
+  width: var(--container);
+  margin: 0 auto 40px;
+}
+
+.blog-search input {
+  width: 100%;
+  max-width: 480px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.status-badge.available {
+  color: var(--accent);
+  border: 1px solid rgba(99, 242, 255, 0.4);
+}
+
+.status-badge.coming-soon {
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .mission-section {
+    padding: 36px 28px;
+  }
+}

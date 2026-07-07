@@ -1,33 +1,51 @@
+import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/guides", label: "Guides" },
+  { to: "/resources", label: "Resources" },
+  { to: "/blog", label: "Blog" },
+  { to: "/about", label: "About" },
+];
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
-    return (
+  return (
+    <nav className="navbar">
+      <div className="nav-inner">
+        <Link className="logo" to="/" onClick={() => setOpen(false)}>
+          INSIDE LINE
+        </Link>
 
-        <header className="navbar">
+        <button
+          className="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
-            <div className="container nav">
-
-                <a className="logo" href="/">
-                    INSIDE LINE
-                </a>
-
-                <nav>
-
-                    <a href="/">Home</a>
-
-                    <a href="/guides">Guides</a>
-
-                    <a href="/resources">Resources</a>
-
-                    <a href="/blog">Blog</a>
-
-                    <a href="/about">About</a>
-
-                </nav>
-
-            </div>
-
-        </header>
-
-    );
-
+        <div className={`nav-links ${open ? "open" : ""}`}>
+          {links.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `nav-link${isActive ? " active" : ""}`
+              }
+              onClick={() => setOpen(false)}
+              end={to === "/"}
+            >
+              {label}
+            </NavLink>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
 }

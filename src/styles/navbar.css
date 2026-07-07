@@ -1,0 +1,139 @@
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.banner {
+  height: 320px;
+  background-size: cover;
+  background-position: center right;
+  position: relative;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(10, 12, 15, 0.1),
+    rgba(10, 12, 15, 0.45)
+  );
+  pointer-events: none;
+}
+
+.navbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 74px;
+  background: rgba(20, 24, 29, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  transition: opacity var(--transition);
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav-link {
+  font-family: var(--font-nav);
+  font-size: 1.65rem;
+  color: var(--accent);
+  text-shadow:
+    0 0 6px rgba(99, 242, 255, 0.5),
+    0 0 14px rgba(99, 242, 255, 0.25);
+  transition: text-shadow var(--transition), transform var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  text-shadow:
+    0 0 8px rgba(99, 242, 255, 0.8),
+    0 0 18px rgba(99, 242, 255, 0.45),
+    0 0 28px rgba(99, 242, 255, 0.2);
+  transform: scale(1.04);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+@media (max-width: 900px) {
+  .banner {
+    height: 240px;
+  }
+
+  .nav-inner {
+    padding: 0 24px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    background: rgba(20, 24, 29, 0.98);
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .banner {
+    height: 200px;
+  }
+}

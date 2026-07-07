@@ -1,0 +1,162 @@
+.guide-detail {
+  width: var(--container);
+  margin: 0 auto 80px;
+}
+
+.guide-detail-hero {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+  padding: 50px 0;
+}
+
+.guide-detail-cover {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.guide-detail-cover img {
+  max-width: 280px;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.4));
+}
+
+.guide-detail-info h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 8px;
+}
+
+.guide-detail-volume {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.guide-detail-info > p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.guide-features {
+  margin-bottom: 32px;
+}
+
+.guide-features h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.guide-features ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guide-features li {
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+}
+
+.guide-features li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.purchase-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.purchase-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color var(--transition);
+}
+
+.purchase-option:hover {
+  border-color: var(--accent);
+}
+
+.purchase-option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.purchase-version {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.purchase-price {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.purchase-btn {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #111;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: background var(--transition), opacity var(--transition);
+  white-space: nowrap;
+}
+
+.purchase-btn:hover {
+  background: #7af4ff;
+}
+
+.purchase-btn:disabled {
+  background: #343b43;
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.guide-not-found {
+  width: var(--container);
+  margin: 80px auto;
+  text-align: center;
+}
+
+.guide-not-found h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .guide-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .purchase-option {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}

@@ -1,0 +1,88 @@
+.hero {
+  width: min(1350px, 92%);
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-left h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 10vw, 8rem);
+  line-height: 0.9;
+  margin-bottom: 30px;
+}
+
+.hero-left p {
+  max-width: 620px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.hero-tagline {
+  margin-top: 40px;
+  color: var(--accent);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 35px;
+  margin-top: 45px;
+  flex-wrap: wrap;
+}
+
+.neon-btn {
+  color: var(--accent);
+  font-family: var(--font-nav);
+  font-size: 2rem;
+  text-shadow:
+    0 0 6px rgba(99, 242, 255, 0.7),
+    0 0 12px rgba(99, 242, 255, 0.5),
+    0 0 22px rgba(99, 242, 255, 0.3);
+  transition: transform var(--transition), text-shadow var(--transition);
+}
+
+.neon-btn:hover {
+  transform: scale(1.05);
+  text-shadow:
+    0 0 8px rgba(99, 242, 255, 0.9),
+    0 0 16px rgba(99, 242, 255, 0.6),
+    0 0 28px rgba(99, 242, 255, 0.4);
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 340px;
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.45));
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .hero-left p {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-right img {
+    width: 280px;
+  }
+}

@@ -1,57 +1,33 @@
-import heroImage from "../assets/images/hero.jpg";
-import volume1 from "../assets/images/volume1.png";
-
+import { Link } from "react-router-dom";
+import coverV1 from "../assets/images/cover-v1.png";
 
 export default function Hero() {
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: `linear-gradient(rgba(12,15,20,.82), rgba(12,15,20,.90)), url(${heroImage})`,
-      }}
-    >
-      <div className="container hero-container">
+    <section className="hero">
+      <div className="hero-left">
+        <h1>INSIDE LINE</h1>
 
-        <div className="hero-left">
+        <p>
+          A self-advocacy publishing platform dedicated to helping
+          incarcerated individuals and their families navigate the
+          criminal justice system through practical guides and
+          accessible legal information.
+        </p>
 
-          <p className="hero-kicker">
-            KNOWLEDGE. RIGHTS. ACTION.
-          </p>
+        <p className="hero-tagline">Knowledge. Rights. Action.</p>
 
-          <h1>
-            INSIDE LINE
-          </h1>
-
-          <p className="hero-description">
-            A self-advocacy resource library dedicated to helping
-            incarcerated individuals and their families understand
-            the criminal justice system through practical, easy to
-            understand guides.
-          </p>
-
-          <div className="hero-buttons">
-
-            <button className="btn-primary">
-              Browse Guides
-            </button>
-
-            <button className="btn-secondary">
-              Free Resources
-            </button>
-
-          </div>
-
+        <div className="hero-buttons">
+          <Link className="neon-btn" to="/guides">
+            Browse Guides
+          </Link>
+          <a className="neon-btn" href="/#off-the-record">
+            Off the Record
+          </a>
         </div>
+      </div>
 
-        <div className="hero-right">
-
-          <img
-            src={volume1}
-            alt="Inside Line Volume 1"
-          />
-
-        </div>
-
+      <div className="hero-right">
+        <img src={coverV1} alt="Inside Line Volume 1" />
       </div>
     </section>
   );

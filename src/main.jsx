@@ -9,6 +9,8 @@ import Guide from "./pages/Guide";
 import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
+import Faq from "./pages/Faq";
+import FaqCategory from "./pages/FaqCategory";
 
 import "./styles/global.css";
 import "./styles/navbar.css";
@@ -17,6 +19,7 @@ import "./styles/cards.css";
 import "./styles/footer.css";
 import "./styles/pages.css";
 import "./styles/guide-page.css";
+import "./styles/faq.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -29,6 +32,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="resources" element={<Resources />} />
           <Route path="blog" element={<Blog />} />
           <Route path="about" element={<About />} />
+          <Route path="faq" element={<Faq />} />
+          <Route path="faq/:category" element={<FaqCategory />} />
         </Route>
       </Routes>
     </BrowserRouter>

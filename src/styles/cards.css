@@ -36,10 +36,12 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
+  cursor: pointer;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.guide-card:hover {
+.guide-card:hover,
+.guide-card.is-expanded {
   transform: translateY(-8px);
   border-color: var(--accent);
   box-shadow: 0 0 35px rgba(99, 242, 255, 0.15);
@@ -52,6 +54,13 @@
   align-items: center;
   padding: 25px;
   min-height: 420px;
+  transition: min-height var(--transition), padding var(--transition);
+}
+
+.guide-card:hover .guide-cover,
+.guide-card.is-expanded .guide-cover {
+  min-height: 300px;
+  padding: 18px;
 }
 
 .guide-cover img {
@@ -60,7 +69,8 @@
   transition: transform var(--transition);
 }
 
-.guide-card:hover .guide-cover img {
+.guide-card:hover .guide-cover img,
+.guide-card.is-expanded .guide-cover img {
   transform: scale(1.03);
 }
 
@@ -99,7 +109,61 @@
 .guide-body .card-status {
   color: var(--text-secondary);
   font-size: 0.9rem;
-  margin-bottom: 18px;
+  margin-bottom: 0;
+  transition: margin-bottom var(--transition);
+}
+
+.guide-card:hover .card-status,
+.guide-card.is-expanded .card-status {
+  margin-bottom: 14px;
+}
+
+.guide-card-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.guide-card:hover .guide-card-details,
+.guide-card.is-expanded .guide-card-details {
+  grid-template-rows: 1fr;
+}
+
+.guide-card-details-inner {
+  overflow: hidden;
+}
+
+.guide-card-description {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.guide-format-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guide-format-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 11px 14px;
+  border: 1px solid rgba(99, 242, 255, 0.45);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(99, 242, 255, 0.04);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.guide-format-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #111;
 }
 
 .guide-body .card-btn {

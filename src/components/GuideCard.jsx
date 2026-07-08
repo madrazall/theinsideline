@@ -1,31 +1,33 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import coverV1 from "../assets/images/cover-v1.png";
-import coverV2 from "../assets/images/cover-v2.png";
-import coverV3 from "../assets/images/cover-v3.png";
-import coverV4 from "../assets/images/cover-v4.png";
-import growthReflection from "../assets/images/growth-reflection.png";
-import lifestyle from "../assets/images/lifestyle.png";
-import activity1 from "../assets/images/cover-activity1.png";
-
-const covers = {
-  "Sentence Modification": coverV1,
-  "Habeas Corpus": coverV2,
-  "Long Distance Parenting": coverV3,
-  Reentry: coverV4,
-  "Growth & Reflection": growthReflection,
-  Lifestyle: lifestyle,
-  "Activity Book 1": activity1,
-};
 
 export default function GuideCard({ guide }) {
-  const image = covers[guide.title];
+  const [expanded, setExpanded] = useState(false);
   const isAvailable = guide.status === "Available";
+  const hasFormats = guide.formats?.length > 0;
+
+  function handleCardClick(event) {
+    if (event.target.closest("a")) return;
+    setExpanded((open) => !open);
+  }
 
   return (
-    <article className="guide-card">
+    <article
+      className={`guide-card${expanded ? " is-expanded" : ""}`}
+      onClick={handleCardClick}
+      onKeyDown={(event) => {
+        if (event.target.closest("a")) return;
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          setExpanded((open) => !open);
+        }
+      }}
+      tabIndex={0}
+      aria-expanded={expanded}
+    >
       <div className="guide-cover">
-        {image ? (
-          <img src={image} alt={guide.title} />
+        {guide.cover ? (
+          <img src={guide.cover} alt={guide.title} />
         ) : (
           <div className="coming-cover">
             <span>COMING SOON</span>
@@ -39,18 +41,42 @@ export default function GuideCard({ guide }) {
         )}
 
         <h3>{guide.title}</h3>
-
         <p className="card-status">{guide.status}</p>
 
-        {isAvailable ? (
-          <Link className="card-btn" to={guide.link}>
-            View Guide
-          </Link>
-        ) : (
-          <button className="card-btn" disabled>
-            Coming Soon
-          </button>
-        )}
+        <div className="guide-card-details">
+          <div className="guide-card-details-inner">
+            {guide.description && (
+              <p className="guide-card-description">{guide.description}</p>
+            )}
+
+            {hasFormats ? (
+              <div className="guide-format-btns">
+                {guide.formats.map((format) => (
+                  <Link
+                    key={format}
+                    className="guide-format-btn"
+                    to={guide.link}
+                    onClick={(event) => event.stopPropagation()}
+                  >
+                    {format}
+                  </Link>
+                ))}
+              </div>
+            ) : isAvailable ? (
+              <Link
+                className="card-btn"
+                to={guide.link}
+                onClick={(event) => event.stopPropagation()}
+              >
+                View Guide
+              </Link>
+            ) : (
+              <button className="card-btn" disabled>
+                Coming Soon
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </article>
   );

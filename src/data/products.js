@@ -191,24 +191,27 @@ export function getRelatedProducts(slugs = []) {
   return slugs.map((slug) => getProduct(slug)).filter(Boolean);
 }
 
-export const legalGuides = allProducts
-  .filter((p) => p.series === "legal")
-  .map(toCardGuide);
-
-export const offTheRecord = allProducts
-  .filter((p) => p.series === "off-the-record")
-  .map(toCardGuide);
-
-export const activityBooks = allProducts
-  .filter((p) => p.series === "activity")
-  .map(toCardGuide);
-
-function toCardGuide(product) {
+export function productToCardGuide(product) {
   return {
     title: product.title,
     volume: product.volume,
     status: product.status === "available" ? "Available" : "Coming Soon",
-    link: product.status === "available" ? `/guides/${product.siteSlug}` : "#",
+    link: `/guides/${product.siteSlug}`,
     siteSlug: product.siteSlug,
+    description: product.description,
+    cover: product.cover,
+    formats: product.variants?.map((v) => v.version) ?? [],
   };
 }
+
+export const legalGuides = allProducts
+  .filter((p) => p.series === "legal")
+  .map(productToCardGuide);
+
+export const offTheRecord = allProducts
+  .filter((p) => p.series === "off-the-record")
+  .map(productToCardGuide);
+
+export const activityBooks = allProducts
+  .filter((p) => p.series === "activity")
+  .map(productToCardGuide);

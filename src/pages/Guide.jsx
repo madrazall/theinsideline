@@ -1,5 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import { getProduct, getRelatedProducts } from "../data/products";
+import {
+  getProduct,
+  getRelatedProducts,
+  productToCardGuide,
+} from "../data/products";
 import GuideSection from "../components/GuideSection";
 
 export default function Guide() {
@@ -22,12 +26,7 @@ export default function Guide() {
 
   const related = getRelatedProducts(product.relatedSlugs);
   const isAvailable = product.status === "available";
-  const relatedCards = related.map((p) => ({
-    title: p.title,
-    volume: p.volume,
-    status: p.status === "available" ? "Available" : "Coming Soon",
-    link: p.status === "available" ? `/guides/${p.siteSlug}` : "#",
-  }));
+  const relatedCards = related.map(productToCardGuide);
 
   return (
     <div className="page-fade">
@@ -67,6 +66,11 @@ export default function Guide() {
                 </ul>
               </div>
             )}
+
+            <p className="faq-guide-link">
+              Questions? Browse the{" "}
+              <Link to="/faq">Knowledge Base →</Link>
+            </p>
 
             <div className="purchase-options">
               {isAvailable && product.variants?.length > 0 ? (

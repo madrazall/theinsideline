@@ -192,6 +192,8 @@ export function getRelatedProducts(slugs = []) {
 }
 
 export function productToCardGuide(product) {
+  const bundle = product.variants?.find((v) => v.version === "Bundle");
+
   return {
     title: product.title,
     volume: product.volume,
@@ -200,7 +202,7 @@ export function productToCardGuide(product) {
     siteSlug: product.siteSlug,
     description: product.description,
     cover: product.cover,
-    formats: product.variants?.map((v) => v.version) ?? [],
+    buyLink: bundle?.paymentLink ?? null,
   };
 }
 

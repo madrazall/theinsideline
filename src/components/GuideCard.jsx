@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function GuideCard({ guide }) {
   const [expanded, setExpanded] = useState(false);
   const isAvailable = guide.status === "Available";
-  const hasFormats = guide.formats?.length > 0;
+  const canBuy = isAvailable && guide.buyLink;
 
   function handleCardClick(event) {
     if (event.target.closest("a")) return;
@@ -49,32 +49,31 @@ export default function GuideCard({ guide }) {
               <p className="guide-card-description">{guide.description}</p>
             )}
 
-            {hasFormats ? (
-              <div className="guide-format-btns">
-                {guide.formats.map((format) => (
-                  <Link
-                    key={format}
-                    className="guide-format-btn"
-                    to={guide.link}
-                    onClick={(event) => event.stopPropagation()}
-                  >
-                    {format}
-                  </Link>
-                ))}
-              </div>
-            ) : isAvailable ? (
+            <div className="guide-card-actions">
+              {canBuy ? (
+                <a
+                  className="guide-buy-btn"
+                  href={guide.buyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  Buy Now
+                </a>
+              ) : (
+                <button className="guide-buy-btn" disabled>
+                  {isAvailable ? "Buy Now" : "Coming Soon"}
+                </button>
+              )}
+
               <Link
-                className="card-btn"
+                className="guide-learn-btn"
                 to={guide.link}
                 onClick={(event) => event.stopPropagation()}
               >
-                View Guide
+                Learn More
               </Link>
-            ) : (
-              <button className="card-btn" disabled>
-                Coming Soon
-              </button>
-            )}
+            </div>
           </div>
         </div>
       </div>

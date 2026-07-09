@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://insideline.org/sitemap.xml

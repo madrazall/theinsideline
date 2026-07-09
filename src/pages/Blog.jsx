@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { articles } from "../data/blog";
 
 export default function Blog() {
@@ -26,9 +27,23 @@ export default function Blog() {
             </div>
             <h3>{article.title}</h3>
             <p>{article.excerpt}</p>
-            <a href="#" className="neon-btn" style={{ fontSize: "1.4rem" }}>
-              Read More
-            </a>
+            {article.published ? (
+              <Link
+                className="neon-btn"
+                to={`/blog/${article.slug}`}
+                style={{ fontSize: "1.4rem" }}
+              >
+                Read More
+              </Link>
+            ) : (
+              <button
+                className="neon-btn blog-coming-soon-btn"
+                disabled
+                style={{ fontSize: "1.4rem" }}
+              >
+                Coming Soon
+              </button>
+            )}
           </article>
         ))}
       </div>

@@ -8,6 +8,7 @@ import Guides from "./pages/Guides";
 import Guide from "./pages/Guide";
 import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import Faq from "./pages/Faq";
 import FaqCategory from "./pages/FaqCategory";
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="guides/:slug" element={<Guide />} />
           <Route path="resources" element={<Resources />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="about" element={<About />} />
           <Route path="faq" element={<Faq />} />
           <Route path="faq/:category" element={<FaqCategory />} />

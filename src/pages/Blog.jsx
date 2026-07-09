@@ -1,6 +1,40 @@
 import { Link } from "react-router-dom";
 import { articles } from "../data/blog";
 
+function BlogCard({ article }) {
+  const content = (
+    <>
+      <div className="blog-meta">
+        <span>{article.date}</span>
+        <span>{article.category}</span>
+      </div>
+      <h3>{article.title}</h3>
+      <p>{article.excerpt}</p>
+      <span className="blog-card-cta">
+        {article.published ? "Read More →" : "Coming Soon"}
+      </span>
+    </>
+  );
+
+  if (article.published) {
+    return (
+      <Link
+        className="blog-card blog-card-link"
+        to={`/blog/${article.slug}`}
+        aria-label={`Read article: ${article.title}`}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <article className="blog-card blog-card-unpublished" aria-disabled="true">
+      {content}
+    </article>
+  );
+}
+
 export default function Blog() {
   return (
     <div className="page-fade">
@@ -20,31 +54,7 @@ export default function Blog() {
 
       <div className="blog-grid">
         {articles.map((article) => (
-          <article className="blog-card" key={article.slug}>
-            <div className="blog-meta">
-              <span>{article.date}</span>
-              <span>{article.category}</span>
-            </div>
-            <h3>{article.title}</h3>
-            <p>{article.excerpt}</p>
-            {article.published ? (
-              <Link
-                className="neon-btn"
-                to={`/blog/${article.slug}`}
-                style={{ fontSize: "1.4rem" }}
-              >
-                Read More
-              </Link>
-            ) : (
-              <button
-                className="neon-btn blog-coming-soon-btn"
-                disabled
-                style={{ fontSize: "1.4rem" }}
-              >
-                Coming Soon
-              </button>
-            )}
-          </article>
+          <BlogCard key={article.slug} article={article} />
         ))}
       </div>
     </div>

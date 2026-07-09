@@ -1,5 +1,336 @@
 export const articles = [
   {
+    slug: "7-common-mistakes-sentence-modification-request",
+    title: "7 Common Mistakes That Can Hurt a Sentence Modification Request",
+    excerpt:
+      "Avoid these common mistakes when preparing a sentence modification request in Connecticut. Learn how organization, preparation, and documentation can strengthen your presentation.",
+    date: "July 10, 2026",
+    publishAt: "2026-07-10",
+    category: "Sentence Modification",
+    author: "The Inside Line",
+    tags: [
+      "Sentence Modification",
+      "Connecticut",
+      "Self Advocacy",
+      "Legal Preparation",
+    ],
+    published: true,
+    blocks: [
+      {
+        type: "p",
+        text: "Preparing a sentence modification request takes more than completing paperwork.",
+      },
+      {
+        type: "p",
+        text: "Many requests are weakened, not because the individual lacks a compelling story, but because that story isn't presented in a clear, organized, and well-supported way.",
+      },
+      {
+        type: "p",
+        text: "While every case is different, avoiding these common mistakes can help you put your best foot forward.",
+      },
+      {
+        type: "blockquote",
+        text: "This article is intended for educational purposes only and is not legal advice. Every case is unique, and no outcome can be guaranteed.",
+        label: "Disclaimer:",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "1. Waiting Too Long to Prepare",
+      },
+      {
+        type: "p",
+        text: "One of the biggest mistakes is assuming preparation begins when you're ready to file.",
+      },
+      {
+        type: "p",
+        text: "In reality, preparation often starts months or even years before a request is submitted.",
+      },
+      {
+        type: "p",
+        text: "Save certificates.",
+      },
+      {
+        type: "p",
+        text: "Keep copies of important documents.",
+      },
+      {
+        type: "p",
+        text: "Track your accomplishments.",
+      },
+      {
+        type: "p",
+        text: "The more organized you are over time, the easier it becomes to present your progress.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "2. Failing to Document Rehabilitation",
+      },
+      {
+        type: "p",
+        text: "Saying you've changed is one thing.",
+      },
+      {
+        type: "p",
+        text: "Showing it is another.",
+      },
+      {
+        type: "p",
+        text: "Examples of documentation include:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Educational certificates",
+          "Vocational training",
+          "Employment records",
+          "Treatment completion",
+          "Counseling participation",
+          "Positive institutional records",
+          "Community involvement",
+          "Leadership roles",
+        ],
+      },
+      {
+        type: "p",
+        text: "Documentation helps demonstrate consistent effort over time.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "3. Submitting Disorganized Paperwork",
+      },
+      {
+        type: "p",
+        text: "Imagine receiving hundreds of pages with no order, no labels, and no explanation.",
+      },
+      {
+        type: "p",
+        text: "Now imagine receiving a neatly organized packet with clearly labeled sections.",
+      },
+      {
+        type: "p",
+        text: "Which would be easier to review?",
+      },
+      {
+        type: "p",
+        text: "Simple organization can make a significant difference.",
+      },
+      {
+        type: "p",
+        text: "Consider separating documents into sections such as:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Educational achievements",
+          "Employment",
+          "Character letters",
+          "Medical records",
+          "Housing plans",
+          "Reentry planning",
+        ],
+      },
+      {
+        type: "p",
+        text: "Organization shows preparation and professionalism.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "4. Focusing Only on the Past",
+      },
+      {
+        type: "p",
+        text: "A sentence modification isn't only about what has already happened.",
+      },
+      {
+        type: "p",
+        text: "The court may also want to understand your future.",
+      },
+      {
+        type: "p",
+        text: "Think about questions like:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Where will you live?",
+          "Do you have employment opportunities?",
+          "What support system do you have?",
+          "What are your long-term goals?",
+          "How will you continue making positive progress?",
+        ],
+      },
+      {
+        type: "p",
+        text: "A realistic plan helps demonstrate readiness.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "5. Relying on Emotion Instead of Evidence",
+      },
+      {
+        type: "p",
+        text: "Your personal story matters.",
+      },
+      {
+        type: "p",
+        text: "But evidence strengthens that story.",
+      },
+      {
+        type: "p",
+        text: 'Instead of saying:',
+      },
+      {
+        type: "blockquote",
+        text: "I've changed.",
+      },
+      {
+        type: "p",
+        text: "Support that statement with:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Certificates",
+          "Evaluations",
+          "Program completion",
+          "Employment history",
+          "Letters of support",
+          "Records of positive conduct",
+        ],
+      },
+      {
+        type: "p",
+        text: "Evidence helps tell your story objectively.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "6. Overlooking Small Details",
+      },
+      {
+        type: "p",
+        text: "Small mistakes can leave a poor impression.",
+      },
+      {
+        type: "p",
+        text: "Before filing, double-check:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Dates",
+          "Names",
+          "Case numbers",
+          "Missing signatures",
+          "Page order",
+          "Attachments",
+          "Contact information",
+        ],
+      },
+      {
+        type: "p",
+        text: "Taking time to review your work demonstrates care and attention to detail.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "7. Not Understanding the Process",
+      },
+      {
+        type: "p",
+        text: "Many people begin preparing paperwork before understanding how the process works.",
+      },
+      {
+        type: "p",
+        text: "Learning about the legal process first can help you:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Ask better questions.",
+          "Gather stronger documentation.",
+          "Avoid unnecessary delays.",
+          "Feel more confident throughout the process.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Knowledge is one of the most valuable tools you can bring to your case.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "A Simple Preparation Checklist",
+      },
+      {
+        type: "p",
+        text: "Before submitting anything, ask yourself:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Have I organized my documents?",
+          "Have I documented my progress?",
+          "Have I created a realistic reentry plan?",
+          "Have I reviewed everything carefully?",
+          "Have I confirmed all required information is included?",
+        ],
+      },
+      {
+        type: "p",
+        text: "If not, spending additional time preparing may be worthwhile.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Final Thoughts",
+      },
+      {
+        type: "p",
+        text: "No article can guarantee the outcome of a sentence modification request.",
+      },
+      {
+        type: "p",
+        text: "What you can control is how well prepared you are.",
+      },
+      {
+        type: "p",
+        text: "Taking the time to stay organized, document your progress, and understand the process allows you to present your circumstances clearly and professionally.",
+      },
+      {
+        type: "p",
+        text: "Preparation is more than paperwork.",
+      },
+      {
+        type: "p",
+        text: "It's part of effective self-advocacy.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Continue Learning",
+      },
+      {
+        type: "p",
+        text: "If you're preparing a sentence modification request, The Inside Line: Sentence Modification includes printable checklists, document organizers, planning worksheets, templates, and practical guidance designed to help you stay organized every step of the way.",
+        link: {
+          text: "The Inside Line: Sentence Modification",
+          to: "/guides/sentence-modification",
+        },
+      },
+      {
+        type: "p",
+        text: "Knowledge. Rights. Action.",
+        emphasis: true,
+      },
+    ],
+  },
+  {
     slug: "how-to-prepare-strong-sentence-modification-request",
     title: "How to Prepare a Strong Sentence Modification Request",
     excerpt:
@@ -951,6 +1282,26 @@ export const articles = [
     published: false,
   },
 ];
+
+function getTodayEastern() {
+  return new Date().toLocaleDateString("en-CA", {
+    timeZone: "America/New_York",
+  });
+}
+
+// Optional publishAt: "YYYY-MM-DD" (Eastern). Omit for immediate publish on deploy.
+export function isArticleLive(article) {
+  if (!article?.published || !article.blocks?.length) return false;
+  if (!article.publishAt) return true;
+  return getTodayEastern() >= article.publishAt;
+}
+
+export function isArticleScheduled(article) {
+  if (!article?.published || !article.blocks?.length || !article.publishAt) {
+    return false;
+  }
+  return getTodayEastern() < article.publishAt;
+}
 
 export function getArticle(slug) {
   return articles.find((article) => article.slug === slug);

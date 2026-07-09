@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { getArticle } from "../data/blog";
+import { getArticle, isArticleLive } from "../data/blog";
 
 function renderBlock(block, index) {
   switch (block.type) {
@@ -49,7 +49,7 @@ export default function BlogPost() {
   const { slug } = useParams();
   const article = getArticle(slug);
 
-  if (!article || !article.published) {
+  if (!article || !isArticleLive(article)) {
     return (
       <div className="blog-not-found page-fade">
         <h1>Article Not Found</h1>

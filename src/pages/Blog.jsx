@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom";
-import { articles } from "../data/blog";
+import {
+  articles,
+  isArticleLive,
+  isArticleScheduled,
+} from "../data/blog";
+
+function getCardCta(article) {
+  if (isArticleLive(article)) return "Read More →";
+  if (isArticleScheduled(article)) {
+    return `Publishing ${article.date} →`;
+  }
+  return "Coming Soon";
+}
 
 function BlogCard({ article }) {
+  const live = isArticleLive(article);
+
   const content = (
     <>
       <div className="blog-meta">
@@ -10,13 +24,11 @@ function BlogCard({ article }) {
       </div>
       <h3>{article.title}</h3>
       <p>{article.excerpt}</p>
-      <span className="blog-card-cta">
-        {article.published ? "Read More →" : "Coming Soon"}
-      </span>
+      <span className="blog-card-cta">{getCardCta(article)}</span>
     </>
   );
 
-  if (article.published) {
+  if (live) {
     return (
       <Link
         className="blog-card blog-card-link"

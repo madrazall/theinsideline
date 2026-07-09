@@ -20,6 +20,14 @@ export default function Faq() {
           featured
         />
 
+        <FaqTopicRow
+          slug="find-your-path"
+          title="Find Your Path"
+          description="Answer a few questions and get a personalized learning plan."
+          featured
+          to="/pathway"
+        />
+
         {faqNavTopics.map((topic) => (
           <FaqTopicRow
             key={topic.slug}

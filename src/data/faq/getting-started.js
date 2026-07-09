@@ -22,7 +22,7 @@ export const gettingStarted = {
           id: "eligibility",
           question: "How do I know if I'm eligible?",
           answer:
-            "Eligibility depends on your specific case, conviction type, sentence, and timing. Each Inside Line guide includes an eligibility section that walks through Connecticut's rules in plain language. Volume 1 covers sentence modification eligibility in detail — start there if that is your goal.",
+            "Eligibility depends on your specific case, conviction type, sentence, and timing. Use the Find Your Path tool on the Knowledge Base to get a personalized learning plan based on where you are today — it does not determine legal eligibility, but it points you to the right articles, resources, and next steps. Each Inside Line guide also includes an eligibility section in plain language.",
         },
         {
           id: "family-use",

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function FaqTopicRow({ slug, title, description, featured }) {
+export default function FaqTopicRow({ slug, title, description, featured, to }) {
   return (
     <Link
       className={`faq-topic-row${featured ? " featured" : ""}`}
-      to={`/faq/${slug}`}
+      to={to ?? `/faq/${slug}`}
     >
       <div className="faq-topic-row-text">
         <h3>{title}</h3>

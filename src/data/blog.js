@@ -1,5 +1,273 @@
 export const articles = [
   {
+    slug: "what-is-habeas-corpus-plain-english-guide",
+    title: "What Is Habeas Corpus? A Plain English Guide",
+    excerpt:
+      "Learn what habeas corpus is, what it is designed to do, and how it differs from an appeal. A beginner-friendly guide from The Inside Line.",
+    date: "July 12, 2026",
+    publishAt: "2026-07-12",
+    category: "Habeas Corpus",
+    author: "The Inside Line",
+    tags: [
+      "Habeas Corpus",
+      "Connecticut",
+      "Criminal Justice",
+      "Self Advocacy",
+      "Legal Education",
+    ],
+    published: true,
+    blocks: [
+      {
+        type: "p",
+        text: 'The words "habeas corpus" sound intimidating, but the concept behind them is one of the oldest legal protections in the world.',
+      },
+      {
+        type: "p",
+        text: "If you've heard the term but aren't sure what it means, you're not alone.",
+      },
+      {
+        type: "p",
+        text: "This article explains habeas corpus in plain English, what it is designed to do, and why it plays an important role in protecting constitutional rights.",
+      },
+      {
+        type: "blockquote",
+        text: "This article is intended for educational purposes only and is not legal advice. Every case is different, and anyone considering legal action should consult a qualified attorney whenever possible.",
+        label: "Disclaimer:",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: 'What Does "Habeas Corpus" Mean?',
+      },
+      {
+        type: "p",
+        text: '"Habeas corpus" is a Latin phrase that is commonly translated as:',
+      },
+      {
+        type: "blockquote",
+        text: "You shall have the body.",
+        label: "",
+      },
+      {
+        type: "p",
+        text: "While the wording sounds unusual today, the purpose is straightforward.",
+      },
+      {
+        type: "p",
+        text: "A habeas corpus action allows a court to examine whether a person's imprisonment or detention is lawful under the Constitution and applicable law.",
+      },
+      {
+        type: "p",
+        text: "In other words, it provides a legal process for challenging the legality of someone's custody.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "What Is Habeas Corpus Designed to Do?",
+      },
+      {
+        type: "p",
+        text: "A habeas corpus petition is not another trial.",
+      },
+      {
+        type: "p",
+        text: "Instead, it asks the court to determine whether a person's constitutional or legal rights were violated in a way that affected the legality of their confinement.",
+      },
+      {
+        type: "p",
+        text: "Depending on the facts of the case, a petition may raise issues involving constitutional rights, legal representation, or other legal questions recognized by law.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Is Habeas Corpus the Same as an Appeal?",
+      },
+      {
+        type: "p",
+        text: "No.",
+      },
+      {
+        type: "p",
+        text: "This is one of the most common misunderstandings.",
+      },
+      {
+        type: "p",
+        text: "An appeal generally asks a higher court to review errors that may have occurred during the original criminal case.",
+      },
+      {
+        type: "p",
+        text: "A habeas corpus petition is a separate legal proceeding that may raise different legal issues, often involving constitutional claims or matters outside the direct appeal process.",
+      },
+      {
+        type: "p",
+        text: "Although they are related, they serve different purposes.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Why Is Habeas Corpus Important?",
+      },
+      {
+        type: "p",
+        text: "For centuries, habeas corpus has been recognized as an important safeguard against unlawful detention.",
+      },
+      {
+        type: "p",
+        text: "Its purpose is to ensure that courts have a mechanism for reviewing whether someone's liberty is being restricted in accordance with the law.",
+      },
+      {
+        type: "p",
+        text: "It reflects a basic principle of the justice system:",
+      },
+      {
+        type: "p",
+        text: "Government action must remain subject to judicial review.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Does Everyone Qualify?",
+      },
+      {
+        type: "p",
+        text: "Not every conviction or circumstance gives rise to a successful habeas corpus petition.",
+      },
+      {
+        type: "p",
+        text: "Whether a petition is appropriate depends on many factors, including:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The facts of the case",
+          "Applicable law",
+          "Constitutional issues",
+          "Prior legal proceedings",
+          "Procedural requirements",
+        ],
+      },
+      {
+        type: "p",
+        text: "Each case must be evaluated individually.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Preparation Matters",
+      },
+      {
+        type: "p",
+        text: "Like many legal proceedings, preparation is essential.",
+      },
+      {
+        type: "p",
+        text: "Helpful steps may include:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Organizing court records",
+          "Creating a timeline of events",
+          "Keeping copies of important documents",
+          "Maintaining correspondence",
+          "Understanding procedural requirements",
+          "Learning the legal terminology involved",
+        ],
+      },
+      {
+        type: "p",
+        text: "Being organized helps you better understand your own case and communicate effectively with legal counsel.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Frequently Asked Questions",
+      },
+      {
+        type: "h3",
+        text: "Does filing a habeas corpus petition automatically result in release?",
+      },
+      {
+        type: "p",
+        text: "No.",
+      },
+      {
+        type: "p",
+        text: "Filing a petition begins a legal process. The outcome depends on the facts, applicable law, and the court's review.",
+      },
+      { type: "hr" },
+      {
+        type: "h3",
+        text: "Can new evidence be important?",
+      },
+      {
+        type: "p",
+        text: "Depending on the circumstances, evidence outside the original trial record may become relevant in certain habeas proceedings.",
+      },
+      {
+        type: "p",
+        text: "Whether that evidence is legally significant depends on the facts and the applicable law.",
+      },
+      { type: "hr" },
+      {
+        type: "h3",
+        text: "Is habeas corpus only used in criminal cases?",
+      },
+      {
+        type: "p",
+        text: "While it is commonly associated with criminal cases, habeas corpus has broader legal applications involving unlawful detention in various contexts.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Knowledge Is the First Step",
+      },
+      {
+        type: "p",
+        text: "Understanding habeas corpus doesn't mean you've decided to file one.",
+      },
+      {
+        type: "p",
+        text: "It means you're learning how the legal system works and becoming better equipped to ask informed questions.",
+      },
+      {
+        type: "p",
+        text: "Knowledge leads to preparation.",
+      },
+      {
+        type: "p",
+        text: "Preparation leads to stronger self-advocacy.",
+      },
+      { type: "hr" },
+      {
+        type: "h2",
+        text: "Continue Learning",
+      },
+      {
+        type: "p",
+        text: "This article is the beginning of a larger educational series.",
+      },
+      {
+        type: "p",
+        text: "The Inside Line: Habeas Corpus is currently in development and will include practical explanations, planning tools, timelines, worksheets, and educational resources designed to help readers better understand the process.",
+        link: {
+          text: "The Inside Line: Habeas Corpus",
+          to: "/guides/habeas-corpus",
+        },
+      },
+      {
+        type: "p",
+        text: "Visit theinsideline.org to explore our growing knowledge base and be the first to know when the guide becomes available.",
+        link: { text: "theinsideline.org", to: "/faq/habeas-corpus" },
+      },
+      {
+        type: "p",
+        text: "Knowledge. Rights. Action.",
+        emphasis: true,
+      },
+    ],
+  },
+  {
     slug: "7-common-mistakes-sentence-modification-request",
     title: "7 Common Mistakes That Can Hurt a Sentence Modification Request",
     excerpt:

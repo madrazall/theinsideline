@@ -122,23 +122,6 @@
   color: var(--text-muted);
 }
 
-.blog-search {
-  width: var(--container);
-  margin: 0 auto 40px;
-}
-
-.blog-search input {
-  width: 100%;
-  max-width: 480px;
-  padding: 14px 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-muted);
-  font-family: var(--font-body);
-  font-size: 1rem;
-}
-
 .blog-meta {
   display: flex;
   gap: 16px;
@@ -267,6 +250,94 @@
 .blog-not-found p {
   color: var(--text-secondary);
   margin-bottom: 24px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.blog-upcoming-inner {
+  max-width: 560px;
+  margin-bottom: 100px;
+  padding-top: 20px;
+}
+
+.blog-upcoming-article-title {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.blog-upcoming h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.blog-upcoming-lead {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.blog-upcoming-signup {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.blog-upcoming-signup h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.blog-upcoming-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blog-upcoming-form input[type="email"] {
+  padding: 14px 16px;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.blog-upcoming-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.blog-upcoming-form .neon-btn {
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.blog-upcoming-success {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.blog-upcoming-error {
+  color: #f87171;
+  font-size: 0.9rem;
+  margin-top: 12px;
 }
 
 @media (max-width: 900px) {

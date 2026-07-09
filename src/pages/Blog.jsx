@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BlogTicker from "../components/BlogTicker";
 import {
   getBlogListArticles,
   isArticleLive,
@@ -55,14 +56,7 @@ export default function Blog() {
         <p>Articles on self-advocacy, legal navigation, and practical guidance.</p>
       </section>
 
-      <div className="blog-search">
-        <input
-          type="search"
-          placeholder="Search articles — coming soon"
-          disabled
-          aria-label="Search articles"
-        />
-      </div>
+      <BlogTicker />
 
       <div className="blog-grid">
         {getBlogListArticles().map((article) => (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {
-  articles,
+  getBlogListArticles,
   isArticleLive,
   isArticleScheduled,
 } from "../data/blog";
@@ -65,7 +65,7 @@ export default function Blog() {
       </div>
 
       <div className="blog-grid">
-        {articles.map((article) => (
+        {getBlogListArticles().map((article) => (
           <BlogCard key={article.slug} article={article} />
         ))}
       </div>

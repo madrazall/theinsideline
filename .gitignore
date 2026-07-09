@@ -8,7 +8,12 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+dist/*
+!dist/package.json
+!dist/package-lock.json
+!dist/wrangler.jsonc
+!dist/.gitkeep
+!dist/.assetsignore
 dist-ssr
 *.local
 

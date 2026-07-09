@@ -18,7 +18,7 @@ function ResourceLink({ resourceId }) {
 
   const isExternal = resource.url?.startsWith("http");
 
-  if (isExternal) {
+  if (isExternal || resource.type === "download") {
     return (
       <a href={resource.url} target="_blank" rel="noopener noreferrer">
         {resource.label}

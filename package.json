@@ -10,6 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "deploy": "npm run build && wrangler deploy",
+    "generate:pdfs": "node scripts/generate-worksheet-pdfs.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

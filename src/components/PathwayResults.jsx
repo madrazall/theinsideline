@@ -20,7 +20,12 @@ function ResourceLink({ resourceId }) {
 
   if (isExternal || resource.type === "download") {
     return (
-      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+      <a
+        href={resource.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...(resource.type === "download" ? { download: "" } : {})}
+      >
         {resource.label}
       </a>
     );

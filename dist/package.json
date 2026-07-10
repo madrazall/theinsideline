@@ -1,8 +1,0 @@
-{
-  "name": "theinsideline",
-  "private": true,
-  "scripts": {
-    "build": "npm --prefix .. ci && npm --prefix .. run build",
-    "deploy": "npx --prefix .. wrangler deploy --config wrangler.jsonc"
-  }
-}
